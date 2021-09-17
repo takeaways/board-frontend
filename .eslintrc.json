@@ -1,7 +1,16 @@
 {
   "plugins": ["prettier"],
-  "extends": ["next/core-web-vitals","plugin:prettier/recommended"],
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [ "external", "builtin", "parent", "sibling", "index"],
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ]
   }
 }
