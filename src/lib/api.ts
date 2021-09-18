@@ -2,7 +2,9 @@ import axios from "axios";
 import { layoutAction } from "./redux/features/layout";
 import { store } from "./redux/store";
 
-const Http = axios.create();
+const Http = axios.create({
+  baseURL: "https://makeup-api.herokuapp.com/api/v1",
+});
 
 Http.interceptors.request.use(
   function (config) {

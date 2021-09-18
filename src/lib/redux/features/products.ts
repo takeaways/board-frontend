@@ -32,8 +32,7 @@ const initialState: ProductState = {
   products: [],
 };
 
-const API_URL =
-  "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
+const API_URL = "/products.json?brand=maybelline";
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",

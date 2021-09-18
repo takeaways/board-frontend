@@ -1,8 +1,8 @@
-import Axios from "axios";
 import { useRouter } from "next/dist/client/router";
 import { useCallback, useEffect, useState } from "react";
 
 import Product from "src/components/Product";
+import Http from "src/lib/api";
 import { Item } from "src/lib/redux/features/products";
 
 function View() {
@@ -11,10 +11,10 @@ function View() {
 
   const [product, setProduct] = useState<Item | undefined>(undefined);
 
-  const API_URL = `http://makeup-api.herokuapp.com/api/v1/products/${id}.json`;
+  const API_URL = `/products/${id}.json`;
   const getData = useCallback(() => {
     if (id) {
-      Axios.get(API_URL).then((response) => {
+      Http.get(API_URL).then((response) => {
         setProduct(response.data);
       });
     }
