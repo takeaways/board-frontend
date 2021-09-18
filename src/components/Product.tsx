@@ -1,5 +1,5 @@
 import { Button } from "@material-ui/core";
-import Image from "next/image";
+
 import { Item } from "src/lib/redux/features/products";
 
 import styles from "styles/Product.module.css";
@@ -14,7 +14,7 @@ function Product({ product }: Props) {
     <article className={styles.container}>
       <header className={styles.header}>
         <div>
-          <Image src={image_link} alt={name} />
+          <img src={image_link} alt={name} />
         </div>
         <div className={styles.infoWrap}>
           <strong>{name}</strong>
