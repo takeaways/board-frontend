@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+
 import { RootState } from "../store";
 import Http from "src/lib/api";
 
@@ -32,7 +33,9 @@ const initialState: ProductState = {
   products: [],
 };
 
-const API_URL = "/products.json?brand=maybelline";
+const API_URL = `/products.json?brand=${
+  process.env.NODE_ENV === "development" ? "dior" : "maybelline"
+}`;
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",

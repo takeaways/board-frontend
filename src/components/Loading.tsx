@@ -1,5 +1,4 @@
 import { Box } from "@material-ui/core";
-import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import React, { useEffect } from "react";
@@ -26,13 +25,22 @@ const useStyles = makeStyles(() =>
   })
 );
 
-function Loading() {
+function Loading({ open }: { open?: boolean }) {
   const classes = useStyles();
   const isLoading = useSelector(isLoadingSelector);
 
   useEffect(() => {
     document.body.style.overflow = isLoading ? "hidden" : "auto";
   }, [isLoading]);
+
+  if (open) {
+    return (
+      <Box className={classes.backdrop}>
+        <CircularProgress color="inherit" />
+      </Box>
+    );
+  }
+
   return isLoading
     ? createPortal(
         <Box className={classes.backdrop}>

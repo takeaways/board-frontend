@@ -10,15 +10,23 @@
 
 # 특징
 1. 정적생성
-  - 프로젝트가 빌드하는 시점에 html파일들이 생성
+  - 프로젝트가 __빌드__ 하는 시점에 html파일들이 생성
   - 모든 요청에 재사용
   - 퍼포먼스 이유로, 넥스트 js는 정적 생성을 권고
   - 정적 셍성된 페이지들은 CDN에 캐시
   - `getStaticProps` / `getStaticPaths`
-2. SSR - Dynamic Rendering 요청시 마다 html을 생성
+  - 마케팅, 블로그 게시물, 제품 목록, 도움말, 문서
+2. SSR - Dynamic Rendering __요청시__ 마다 html을 생성
   - 항상 최신 상태 유지
   - `getServerSideProps`
+  - 항상 최신 상태 유지
+  - 관리자 페이지
+  - 분석 차트
 
+# .next 
+1. 서버 구동과 돤련된 파일이 있어요
+2. Link를 사용한 부분은 화면에 모이면 html파일을 자동으로 생성해줌 get StaticProps
+3. production 이랑은 다름 dev는 계속 새로 요청함
 
 ## Layout 
 - _app 이용  

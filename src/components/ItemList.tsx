@@ -34,7 +34,7 @@ function ItemList({ list }: Props) {
         >
           {items.map((item) => (
             <Grid key={item.name} item>
-              <Link href={`/view/${item.id}`}>
+              <Link href={`/detail/${item.id}`}>
                 <a>
                   <Card style={{ height: 320 }}>
                     <CardActionArea>
