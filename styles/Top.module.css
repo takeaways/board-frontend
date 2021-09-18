@@ -1,0 +1,24 @@
+.container{
+  display: flex;
+  padding: 20;
+}
+
+.imageWrap{
+  flex: 100px 0 0;
+}
+
+.imageWrap img{
+  display: block;
+  
+}
+
+.title span{
+  color: beige;
+  display: inline-block;
+}
+
+
+
+
+
+
