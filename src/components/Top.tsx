@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Gnb from "./Gnb";
 import styles from "styles/Top.module.css";
@@ -11,7 +12,7 @@ function Top() {
         <a>
           <div className={styles.container}>
             <div className={styles.imageWrap}>
-              <img src="/images/logo.png" alt="logo" width="80" />
+              <Image src="/images/logo.png" alt="logo" width="80" />
             </div>
             <h1 className={styles.title}>
               {MAIN_NAME.split("").map((a, i) => (
